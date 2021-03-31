@@ -13,30 +13,18 @@
 <form action="/visit" method="POST" role="form">
   <div class="form-group">
     <label for="exampleInputEmail1">Ваше имя</label>
-    <input value="<%=@username%>" name="username" type="text" class="form-control" id="exampleInputEmail1" placeholder="введите ваше имя">
+    <input name="client[name]" type="text" class="form-control" id="exampleInputEmail1" placeholder="введите ваше имя">
     <br>
     <label for="exampleInputEmail1">Ваш телефон</label>
-    <input value="<%=@phone%>" name="phone" type="text" class="form-control" id="exampleInputEmail1" placeholder="введите ваш телефон">
+    <input name="client[phone]" type="text" class="form-control" id="exampleInputEmail1" placeholder="введите ваш телефон">
     <br>
     <label for="exampleInputEmail1">Время записи</label>
-    <input id="datetimepicker" value="<%=@datetime%>" name="datetime" type="text" class="form-control" id="exampleInputEmail1" placeholder="введите время записи">
+    <input id="datetimepicker" name="client[datestamp]" type="text" class="form-control" id="exampleInputEmail1" placeholder="введите время записи">
     </div>
-    <div class="form-group">
-    <label for="exampleFormControlSelect1">Выберете парикмахера</label>
-    <select name="barber" class="form-control" id="exampleFormControlSelect1">
-      <!-- <option <%= @barber == 'Walter Wite' ? 'selected' : '' %>>Walter Wite</option>
-      <option <%= @barber == 'Jessie Pinkman' ? 'selected' : '' %>>Jessie Pinkman</option>
-      <option <%= @barber == 'Gus Fring' ? 'selected' : '' %>>Gus Fring</option> -->    
-
-      <%@barbers.each do |item|%>
-        <option <%= @barber == item['name'] ? 'selected' : '' %>><%=item['name']%></option>
-      <%end%>
-
-    </select>
-    <br>
+       
     <div class="form-group">
       <label >Выберете цвет краски:</label>
-      <select id="color" name="colors">
+      <select id="color" name="client[color]">
         <option value="#7bd148">Green</option>
         <option value="#5484ed">Bold blue</option>
         <option value="#a4bdfc">Blue</option>

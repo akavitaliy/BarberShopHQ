@@ -29,13 +29,28 @@ get '/visit' do
 end
 
 post '/visit' do
-	@username = params[:username]
-	@phone = params[:phone]
-	@datetime = params[:datetime]
-	@barber = params[:barber]
-	@colors = params[:colors]
+	# @username = params[:username]
+	# @phone = params[:phone]
+	# @datetime = params[:datetime]
+	# @barber = params[:barber]
+	# @colors = params[:colors]
 
-	Client.create(:name => params[:username], :phone => params[:phone], :datestamp => params[:datetime], :barber => params[:barber], :color => params[:colors]) 
+	# Client.create(:name => params[:username], :phone => params[:phone], :datestamp => params[:datetime], :barber => params[:barber], :color => params[:colors]) 
+	
+
+	c = Client.new params[:client]
+	c.save
 	erb "Спасибо за сапись!"
+end
 
+get '/contact' do
+	erb :contact
+end
+
+post '/contact' do 
+	@contact_name = params[:name]
+	@message = params[:message]
+
+	Contact.create(:name => params[:name], :message => params[:message])
+	erb "Спасибо за сообщение!"
 end
