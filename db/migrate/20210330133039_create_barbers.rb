@@ -9,6 +9,7 @@ class CreateBarbers < ActiveRecord::Migration[6.1]
     Barber.create :name => 'Jessie Pinkman'
     Barber.create :name => 'Walter White'
     Barber.create :name => 'Gus Fring'
+    Barber.create :name => 'Michal Bold'
     
 
   end

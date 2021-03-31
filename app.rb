@@ -48,9 +48,12 @@ get '/contact' do
 end
 
 post '/contact' do 
-	@contact_name = params[:name]
-	@message = params[:message]
+	# @contact_name = params[:name]
+	# @message = params[:message]
 
-	Contact.create(:name => params[:name], :message => params[:message])
+	# Contact.create(:name => params[:name], :message => params[:message])
+
+	c = Contact.new params[:contact]
+	c.save
 	erb "Спасибо за сообщение!"
 end
