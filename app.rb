@@ -52,3 +52,7 @@ post '/contact' do
 	c.save
 	erb "Спасибо за сообщение!"
 end
+
+get '/barber/:id' do
+	erb :barber
+end
