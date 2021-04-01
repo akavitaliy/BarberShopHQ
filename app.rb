@@ -8,6 +8,10 @@ require 'rake'
 set :database, {adapter: "sqlite3", database: "barber.db"}
 
 class Client < ActiveRecord::Base
+	validates :name, presence: true
+	validates :phone, presence: true
+	validates :datestamp, presence: true
+	validates :color, presence: true
 end
 
 class Barber < ActiveRecord::Base
@@ -29,17 +33,8 @@ get '/visit' do
 end
 
 post '/visit' do
-	# @username = params[:username]
-	# @phone = params[:phone]
-	# @datetime = params[:datetime]
-	# @barber = params[:barber]
-	# @colors = params[:colors]
-
-	# Client.create(:name => params[:username], :phone => params[:phone], :datestamp => params[:datetime], :barber => params[:barber], :color => params[:colors]) 
-	
-
-	c = Client.new params[:client]
-	c.save
+	@c = Client.new params[:client]
+	@c.save
 	erb "Спасибо за сапись!"
 end
 
@@ -48,11 +43,6 @@ get '/contact' do
 end
 
 post '/contact' do 
-	# @contact_name = params[:name]
-	# @message = params[:message]
-
-	# Contact.create(:name => params[:name], :message => params[:message])
-
 	c = Contact.new params[:contact]
 	c.save
 	erb "Спасибо за сообщение!"
