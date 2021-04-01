@@ -6,13 +6,13 @@
 <form action="/visit" method="POST" role="form">
   <div class="form-group">
     <label for="exampleInputEmail1">Ваше имя</label>
-    <input name="client[name]" type="text" class="form-control" id="exampleInputEmail1" placeholder="введите ваше имя">
+    <input name="client[name]" type="text" class="form-control" id="exampleInputEmail1" placeholder="введите ваше имя" value="<%=@c.name%>">
     <br>
     <label for="exampleInputEmail1">Ваш телефон</label>
-    <input name="client[phone]" type="text" class="form-control" id="exampleInputEmail1" placeholder="введите ваш телефон">
+    <input name="client[phone]" type="text" class="form-control" id="exampleInputEmail1" placeholder="введите ваш телефон" value="<%=@c.phone%>">
     <br>
     <label for="exampleInputEmail1">Время записи</label>
-    <input id="datetimepicker" name="client[datestamp]" type="text" class="form-control" id="exampleInputEmail1" placeholder="введите время записи">
+    <input id="datetimepicker" name="client[datestamp]" type="text" class="form-control" id="exampleInputEmail1" placeholder="введите время записи" value="<%=@c.datestamp%>">
     </div>
        
     <div class="form-group">
